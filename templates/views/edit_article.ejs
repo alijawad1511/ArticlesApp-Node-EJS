@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/links') %>
+        <title>Edit Article</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+        <h1 class="text-center py-3">Edit Article</h1>
+        <form class="w-50 border p-5 m-auto rounded" action="/articles/edit/<%=article._id%>" method="post">
+            <div class="form-group">
+                <label for="">Title</label>
+                <input name="title" type="text" value="<%=article.title%>" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="">Author</label>
+                <input name="author" type="text" value="<%=article.author%>" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="">Body</label>
+                <textarea class="form-control" name="body" rows="3" required><%=article.body%></textarea>
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Save</button>
+        </form>
+        <%- include('../partials/scripts') %>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

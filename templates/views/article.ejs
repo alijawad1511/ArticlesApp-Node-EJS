@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/links') %>
+    <title>Article</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="container">
+        <h1><%=article.title%></h1>
+        <h5>Written by <span class="text-primary"><%=article.author%></span></h5>
+        <p><%=article.body%></p>
+        <a href="/articles/edit/<%=article._id%>" class="btn btn-primary px-3">Edit</a>
+        <a class="btn btn-danger px-3 delete-article" data-id="<%=article._id%>">Delete</a>
+    </div>
+
+    <%- include('../partials/scripts') %>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

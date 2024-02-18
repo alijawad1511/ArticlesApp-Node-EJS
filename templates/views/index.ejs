@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/links') %>
+        <title>Articles</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+    <%- messages('../partials/message', locals) %>
+    <div class="container">
+        <h1 class="text-center py-3">Articles</h1>
+        <ul class="list-group">
+            <% for(let i=0;i<articles.length;i++){ %>
+                <li class="list-group-item">
+                    <a href="/articles/<%=articles[i]._id%>"><%=articles[i].title%></a>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+    <%- include('../partials/scripts') %>
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>
